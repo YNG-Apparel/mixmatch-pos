@@ -2,6 +2,10 @@
 
 A web-based Point of Sale (POS) and inventory management system built with JavaScript and Supabase.
 
+## Live Demo
+
+https://mixmatchavava.netlify.app/pages/login.html
+
 ## Features
 
 - Product management
