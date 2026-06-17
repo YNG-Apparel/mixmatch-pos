@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelola Staf · Mix & Match</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div id="sidebarContainer"></div>
+  <div class="main-content">
+    <div id="topnavContainer"></div>
+    <div class="container-fluid py-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <h4>Kelola Staf & Pengguna</h4>
+          <p class="text-muted">Lihat daftar staf, peran, dan izin akses.</p>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staffModal">Tambah Staf</button>
+      </div>
+      <div class="card p-3">
+        <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle">
+            <thead class="table-light"><tr><th>Nama</th><th>Email</th><th>Username</th><th>Peran</th><th>Telepon</th><th>Aksi</th></tr></thead>
+            <tbody id="staffTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staffModal" tabindex="-1" aria-labelledby="staffModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staffModalLabel">Tambah Staf Baru</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <form id="staffForm">
+            <div class="mb-3">
+              <label class="form-label">Nama Lengkap</label>
+              <input id="staffName" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input id="staffEmail" type="email" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input id="staffUsername" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Kata Sandi</label>
+              <input id="staffPassword" type="password" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Peran</label>
+              <select id="staffRole" class="form-select" required>
+                <option value="1">Cashier</option>
+                <option value="2">Manager</option>
+                <option value="3">Owner</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Telepon</label>
+              <input id="staffPhone" class="form-control" />
+            </div>
+            <button class="btn btn-primary">Simpan Staf</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastWrapper"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/staff.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Node / build output
+node_modules
+.netlify
+.DS_Store
+.env
+.env.local
+.env.*.local
+/dist
+/build
+
+# Supabase local CLI
+.supabase
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+
+# OS generated files
+Thumbs.db

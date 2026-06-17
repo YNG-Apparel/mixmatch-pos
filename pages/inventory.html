@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventaris · Boutique POS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div id="sidebarContainer"></div>
+  <div class="main-content">
+    <div id="topnavContainer"></div>
+    <div class="container-fluid py-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <h4>Manajemen Inventaris</h4>
+          <p class="text-muted">Catat stok masuk, keluar, dan penyesuaian dengan riwayat audit.</p>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inventoryModal">Tambah Log Stok</button>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-12">
+          <div class="card p-3">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm align-middle">
+                <thead class="table-light"><tr><th>Produk</th><th>Tipe</th><th>Sebelum</th><th>Perubahan</th><th>Setelah</th><th>Petugas</th><th>Tanggal</th><th>Catatan</th></tr></thead>
+                <tbody id="inventoryLogTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="inventoryModal" tabindex="-1" aria-labelledby="inventoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="inventoryModalLabel">Tambah Log Inventaris</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <form id="inventoryForm">
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label">Produk</label><select id="inventoryProduct" class="form-select" required></select></div>
+              <div class="col-md-6"><label class="form-label">Tipe Aksi</label><select id="inventoryAction" class="form-select" required><option value="Stock In">Stock Masuk</option><option value="Stock Out">Stock Keluar</option><option value="Adjustment">Penyesuaian Stok</option></select></div>
+              <div class="col-md-4"><label class="form-label">Jumlah</label><input id="inventoryQuantity" type="number" min="1" class="form-control" required /></div>
+              <div class="col-md-4"><label class="form-label">Jumlah Sebelum</label><input id="inventoryBefore" type="number" class="form-control" readonly /></div>
+              <div class="col-md-4"><label class="form-label">Jumlah Sesudah</label><input id="inventoryAfter" type="number" class="form-control" readonly /></div>
+              <div class="col-12"><label class="form-label">Catatan</label><textarea id="inventoryNotes" class="form-control" rows="3"></textarea></div>
+            </div>
+            <div class="mt-4 text-end"><button class="btn btn-primary">Simpan Log</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastWrapper"></div>
+  <script type="module" src="../js/inventory.js"></script>
+</body>
+</html>

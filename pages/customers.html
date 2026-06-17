@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pelanggan · Boutique POS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div id="sidebarContainer"></div>
+  <div class="main-content">
+    <div id="topnavContainer"></div>
+    <div class="container-fluid py-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <h4>Manajemen Pelanggan</h4>
+          <p class="text-muted">Cari pelanggan, lihat histori pembelian, dan kelola loyalitas.</p>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customerModal">Tambah Pelanggan</button>
+      </div>
+      <div class="card p-3 mb-3">
+        <div class="row g-3">
+          <div class="col-md-4"><input id="customerSearch" class="form-control" placeholder="Cari nama atau telepon" /></div>
+          <div class="col-md-2"><button id="searchCustomerButton" class="btn btn-secondary w-100">Cari</button></div>
+        </div>
+      </div>
+      <div class="card p-3">
+        <div class="table-responsive">
+          <table class="table table-hover table-sm align-middle">
+            <thead class="table-light"><tr><th>Nama</th><th>Telepon</th><th>Alamat</th><th>Spending</th><th>Poin</th><th>Aksi</th></tr></thead>
+            <tbody id="customersTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customerModalLabel">Tambah Pelanggan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <form id="customerForm">
+            <div class="mb-3"><label class="form-label">Nama Pelanggan</label><input id="customerNameInput" class="form-control" required /></div>
+            <div class="mb-3"><label class="form-label">Telepon</label><input id="customerPhoneInput" class="form-control" /></div>
+            <div class="mb-3"><label class="form-label">Alamat</label><textarea id="customerAddressInput" class="form-control" rows="3"></textarea></div>
+            <div class="mb-3"><label class="form-label">Catatan</label><textarea id="customerNotesInput" class="form-control" rows="2"></textarea></div>
+            <button class="btn btn-primary">Simpan Pelanggan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="toastWrapper"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/customers.js"></script>
+</body>
+</html>

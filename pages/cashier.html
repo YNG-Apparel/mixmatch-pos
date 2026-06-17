@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasir · Boutique POS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div id="sidebarContainer"></div>
+  <div class="main-content">
+    <div id="topnavContainer"></div>
+    <div class="container-fluid py-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-3">
+        <div>
+          <h4>Kasir</h4>
+          <p class="text-muted">Cari produk dengan cepat menggunakan Kode Produk atau Nama Produk.</p>
+        </div>
+      </div>
+      <div class="card p-3 mb-3">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-5"><label class="form-label">Cari Produk</label><input id="productSearch" type="text" class="form-control form-control-lg" placeholder="Masukkan kode produk atau nama" autocomplete="off" /></div>
+          <div class="col-md-2"><button id="searchProductButton" class="btn btn-primary w-100">Cari</button></div>
+          <div class="col-md-5"><p class="text-muted small">Tekan Enter setelah mengetik untuk memilih produk dan mempercepat transaksi.</p></div>
+        </div>
+      </div>
+      <div class="card p-3 mb-3">
+        <h5>Keranjang</h5>
+        <div class="table-responsive mt-3">
+          <table class="table table-sm align-middle">
+            <thead class="table-light"><tr><th>Kode</th><th>Produk</th><th>Qty</th><th>Harga</th><th>Diskon</th><th>Subtotal</th><th>Aksi</th></tr></thead>
+            <tbody id="cartTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card p-3">
+            <h5>Detail Transaksi</h5>
+            <div class="mb-3"><label class="form-label">Nama Pelanggan</label><input id="customerName" class="form-control" placeholder="Opsional" /></div>
+            <div class="mb-3"><label class="form-label">Metode Pembayaran</label><select id="paymentMethod" class="form-select"><option>Cash</option><option>QRIS</option><option>Transfer Bank</option><option>Debit Card</option><option>Credit Card</option></select></div>
+            <div class="mb-3"><label class="form-label">Catatan Transaksi</label><textarea id="transactionNotes" class="form-control" rows="3"></textarea></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card p-3 h-100">
+            <h5>Ringkasan Pembayaran</h5>
+            <div class="d-flex justify-content-between mt-3"><span>Subtotal</span><strong id="subtotalValue">Rp 0</strong></div>
+            <div class="d-flex justify-content-between"><span>Diskon Transaksi</span><input id="transactionDiscount" type="number" min="0" class="form-control form-control-sm w-50" value="0" /></div>
+            <div class="d-flex justify-content-between mt-3"><span>Total</span><strong id="totalValue">Rp 0</strong></div>
+            <button id="completePayment" class="btn btn-success w-100 mt-4">Selesaikan Pembayaran</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="toastWrapper"></div>
+  <script type="module" src="../js/cashier.js"></script>
+</body>
+</html>
