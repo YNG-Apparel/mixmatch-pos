@@ -6,6 +6,14 @@ A web-based Point of Sale (POS) and inventory management system built with JavaS
 
 https://mixmatchavava.netlify.app/pages/login.html
 
+## Screenshots
+
+### Login
+![Login](Screenshots 2.png)
+
+### Dashboard
+![Dashboard](Screenshots 1.png)
+
 ## Features
 
 - Product management
